@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RP 20-200 Dashboard 2026</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: #94a3b8;
+      margin-bottom: 24px;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+
+    .tab {
+      background: #1e293b;
+      border: 1px solid #334155;
+      color: white;
+      padding: 12px 18px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .tab:hover {
+      background: #334155;
+    }
+
+    .tab.active {
+      background: #2563eb;
+    }
+
+    .content {
+      display: none;
+    }
+
+    .content.active {
+      display: block;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .card {
+      background: #1e293b;
+      border-radius: 16px;
+      padding: 20px;
+      border: 1px solid #334155;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .card h3 {
+      margin-bottom: 14px;
+      font-size: 22px;
+    }
+
+    .xp {
+      border-left: 5px solid #22c55e;
+    }
+
+    .profit {
+      border-left: 5px solid #eab308;
+    }
+
+    .neutral {
+      border-left: 5px solid #38bdf8;
+    }
+
+    .section-title {
+      margin-top: 24px;
+      margin-bottom: 16px;
+      font-size: 24px;
+    }
+
+    ul {
+      padding-left: 18px;
+      line-height: 1.7;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      margin-bottom: 12px;
+      background: #334155;
+      color: #cbd5e1;
+    }
+
+    .footer {
+      margin-top: 40px;
+      padding: 20px;
+      background: #111827;
+      border-radius: 16px;
+      border: 1px solid #334155;
+    }
+
+    code {
+      background: #0f172a;
+      padding: 2px 6px;
+      border-radius: 6px;
+      color: #93c5fd;
+    }
+  </style>
+</head>
+<body>
+  <h1>Royal Paladin Dashboard 2026</h1>
+  <p class="subtitle">Roadmap completo do level 20 ao 200 focado em solo hunt, profit e progressão moderna.</p>
+
+  <div class="tabs">
+    <button class="tab active" onclick="showTab('20-50')">20-50</button>
+    <button class="tab" onclick="showTab('50-80')">50-80</button>
+    <button class="tab" onclick="showTab('80-100')">80-100</button>
+    <button class="tab" onclick="showTab('100-130')">100-130</button>
+    <button class="tab" onclick="showTab('130-160')">130-160</button>
+    <button class="tab" onclick="showTab('160-200')">160-200</button>
+  </div>
+
+  <div id="20-50" class="content active">
+    <div class="grid">
+      <div class="card xp">
+        <span class="tag">Melhor XP</span>
+        <h3>Stone Refiners</h3>
+        <ul>
+          <li>XP: 150k-250k/h</li>
+          <li>Usar Stealth Ring</li>
+          <li>Royal Spears</li>
+          <li>Baixo risco</li>
+          <li>Ideal para rushar level</li>
+        </ul>
+      </div>
+
+      <div class="card profit">
+        <span class="tag">Melhor Profit</span>
+        <h3>Amazons + Swamp Trolls</h3>
+        <ul>
+          <li>Protective Charms</li>
+          <li>Medicine Pouch</li>
+          <li>Excelente profit low level</li>
+          <li>Risco extremamente baixo</li>
+          <li>Ótimo para bankroll inicial</li>
+        </ul>
+      </div>
+
+      <div class="card neutral">
+        <span class="tag">Equilibrado</span>
+        <h3>Apes</h3>
+        <ul>
+          <li>XP consistente</li>
+          <li>Bom profit</li>
+          <li>Ape Fur e Ape Tokens</li>
+          <li>Boa bestiary</li>
+          <li>Excelente progressão</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 class="section-title">Equipamentos</h2>
+    <div class="card">
+      <ul>
+        <li>Zaoan Helmet</li>
+        <li>Paladin Armor</li>
+        <li>Zaoan Legs</li>
+        <li>Boots of Haste</li>
+        <li>Composite Hornbow</li>
+        <li>Royal Spears</li>
+      </ul>
+    </div>
+
+    <h2 class="section-title">Magias</h2>
+    <div class="card">
+      <ul>
+        <li>exori con</li>
+        <li>exori san (level 40)</li>
+        <li>exura gran</li>
+        <li>utani hur</li>
+        <li>strong haste</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="50-80" class="content">
+    <div class="grid">
+      <div class="card xp">
+        <span class="tag">Melhor XP</span>
+        <h3>Lion's Rock</h3>
+        <ul>
+          <li>XP: 300k-500k/h</li>
+          <li>Excelente respawn</li>
+          <li>Rush de level muito forte</li>
+          <li>Começa a aprender AoE</li>
+        </ul>
+      </div>
+
+      <div class="card profit">
+        <span class="tag">Melhor Profit</span>
+        <h3>Yalahar Cults</h3>
+        <ul>
+          <li>Rope Belts</li>
+          <li>Profit muito consistente</li>
+          <li>Baixo risco</li>
+          <li>Excelente para imbuement items</li>
+        </ul>
+      </div>
+
+      <div class="card neutral">
+        <span class="tag">Equilibrado</span>
+        <h3>Mutated Tigers</h3>
+        <ul>
+          <li>Sabreteeth</li>
+          <li>XP boa</li>
+          <li>Profit sólido</li>
+          <li>Excelente hunt para RP solo</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 class="section-title">Equipamentos</h2>
+    <div class="card">
+      <ul>
+        <li>Warsinger Bow</li>
+        <li>Onyx Arrows</li>
+        <li>Depth Lorica</li>
+        <li>Zaoan Helmet</li>
+        <li>BOH</li>
+      </ul>
+    </div>
+
+    <h2 class="section-title">Magias</h2>
+    <div class="card">
+      <ul>
+        <li>exevo mas san (level 50)</li>
+        <li>utito tempo san (level 60)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="80-100" class="content">
+    <div class="grid">
+      <div class="card xp">
+        <span class="tag">Melhor XP</span>
+        <h3>Nightmare Scions</h3>
+        <ul>
+          <li>XP: 700k-1kk/h</li>
+          <li>Excelente scaling</li>
+          <li>Ideal para rushar 100</li>
+          <li>Maior risco</li>
+        </ul>
+      </div>
+
+      <div class="card profit">
+        <span class="tag">Melhor Profit</span>
+        <h3>Putrid Mummies</h3>
+        <ul>
+          <li>Profit extremamente forte</li>
+          <li>350k+/h possível</li>
+          <li>Baixo risco</li>
+          <li>Excelente sustain</li>
+        </ul>
+      </div>
+
+      <div class="card neutral">
+        <span class="tag">Equilibrado</span>
+        <h3>Wyrms</h3>
+        <ul>
+          <li>Boa XP</li>
+          <li>Profit neutro</li>
+          <li>Excelente para aprender kite</li>
+          <li>Respawn confortável</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 class="section-title">Equipamentos</h2>
+    <div class="card">
+      <ul>
+        <li>Rift Bow</li>
+        <li>Prismatic Armor</li>
+        <li>Yalahari Legs</li>
+        <li>Crystalline Arrows</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="100-130" class="content">
+    <div class="grid">
+      <div class="card xp">
+        <span class="tag">Melhor XP</span>
+        <h3>Lava Lurkers</h3>
+        <ul>
+          <li>XP extremamente alta</li>
+          <li>1.5kk+/h</li>
+          <li>Waste considerável</li>
+          <li>Ideal para rush</li>
+        </ul>
+      </div>
+
+      <div class="card profit">
+        <span class="tag">Melhor Profit</span>
+        <h3>Mini Rosha</h3>
+        <ul>
+          <li>Profit consistente</li>
+          <li>Ótimos creature products</li>
+          <li>Risco controlável</li>
+          <li>Excelente evolução</li>
+        </ul>
+      </div>
+
+      <div class="card neutral">
+        <span class="tag">Equilibrado</span>
+        <h3>Werehyaenas</h3>
+        <ul>
+          <li>Excelente hunt moderna</li>
+          <li>XP forte</li>
+          <li>Profit sólido</li>
+          <li>Boa para AoE</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 class="section-title">Equipamentos</h2>
+    <div class="card">
+      <ul>
+        <li>Living Vine Bow</li>
+        <li>Prismatic Armor</li>
+        <li>Dark Whispers</li>
+        <li>Winged Boots</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="130-160" class="content">
+    <div class="grid">
+      <div class="card xp">
+        <span class="tag">Melhor XP</span>
+        <h3>Werehyaenas AoE</h3>
+        <ul>
+          <li>2kk+/h</li>
+          <li>Excelente scaling</li>
+          <li>Meta moderna RP</li>
+          <li>Necessita kite bom</li>
+        </ul>
+      </div>
+
+      <div class="card profit">
+        <span class="tag">Melhor Profit</span>
+        <h3>Glooth Bandits</h3>
+        <ul>
+          <li>Profit absurdo</li>
+          <li>Muito consistente</li>
+          <li>Baixo risco</li>
+          <li>Uma das hunts mais famosas para RP</li>
+        </ul>
+      </div>
+
+      <div class="card neutral">
+        <span class="tag">Equilibrado</span>
+        <h3>Medusa Tower</h3>
+        <ul>
+          <li>XP boa</li>
+          <li>Profit bom</li>
+          <li>Boa bestiary</li>
+          <li>Excelente hunt clássica</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 class="section-title">Equipamentos</h2>
+    <div class="card">
+      <ul>
+        <li>Living Vine Bow</li>
+        <li>Ghost Chestplate</li>
+        <li>Sleep Shawl</li>
+        <li>Prismatic Legs</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="160-200" class="content">
+    <div class="grid">
+      <div class="card xp">
+        <span class="tag">Melhor XP</span>
+        <h3>Asuras Palace</h3>
+        <ul>
+          <li>3kk+/h possível</li>
+          <li>Meta de XP RP</li>
+          <li>Excelente scaling</li>
+          <li>Maior risco</li>
+        </ul>
+      </div>
+
+      <div class="card profit">
+        <span class="tag">Melhor Profit</span>
+        <h3>Glooth Bandits</h3>
+        <ul>
+          <li>Continua excelente</li>
+          <li>Profit muito consistente</li>
+          <li>Baixo risco</li>
+          <li>Ótima estabilidade</li>
+        </ul>
+      </div>
+
+      <div class="card neutral">
+        <span class="tag">Equilibrado</span>
+        <h3>Banuta</h3>
+        <ul>
+          <li>XP sólida</li>
+          <li>Profit bom</li>
+          <li>Boa hunt para charms</li>
+          <li>Excelente sustain</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 class="section-title">Equipamentos</h2>
+    <div class="card">
+      <ul>
+        <li>Bow of Cataclysm</li>
+        <li>Ghost Chestplate</li>
+        <li>Falcon Coif</li>
+        <li>Winged Boots</li>
+        <li>Sleep Shawl</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer">
+    <h2>Hospedagem simples para visualizar o HTML</h2>
+    <br />
+    <p><strong>Mais simples:</strong> GitHub Pages</p>
+    <ul>
+      <li>Crie uma conta no GitHub</li>
+      <li>Crie um repositório</li>
+      <li>Suba este arquivo como <code>index.html</code></li>
+      <li>Ative o GitHub Pages nas configurações</li>
+      <li>Você terá um link público gratuito</li>
+    </ul>
+
+    <br />
+
+    <p><strong>Alternativas extremamente fáceis:</strong></p>
+    <ul>
+      <li>Netlify</li>
+      <li>Vercel</li>
+      <li>Cloudflare Pages</li>
+    </ul>
+
+    <br />
+
+    <p><strong>Minha recomendação:</strong> GitHub Pages.</p>
+    <p>É gratuito, simples e perfeito para um dashboard estático como este.</p>
+  </div>
+
+  <script>
+    function showTab(tabId) {
+      const tabs = document.querySelectorAll('.tab');
+      const contents = document.querySelectorAll('.content');
+
+      tabs.forEach(tab => tab.classList.remove('active'));
+      contents.forEach(content => content.classList.remove('active'));
+
+      event.target.classList.add('active');
+      document.getElementById(tabId).classList.add('active');
+    }
+  </script>
+</body>
+</html>
+
