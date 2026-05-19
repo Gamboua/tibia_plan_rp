@@ -483,15 +483,42 @@
       <div class="card">
         <h3>Level 80-150</h3>
         <ul>
-          <li><strong>Arma:</strong> Rift Bow / L
+          <li><strong>Arma:</strong> Rift Bow / Living Vine Bow</li>
+          <li><strong>Munição:</strong> Crystalline Arrows</li>
+          <li><strong>Alternativa:</strong> Drill Bolts</li>
+          <li><strong>Melhor uso:</strong> AoE hunts modernas</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Level 150-200</h3>
+        <ul>
+          <li><strong>Arma:</strong> Bow of Cataclysm</li>
+          <li><strong>Munição:</strong> Diamond Arrows</li>
+          <li><strong>Alternativa:</strong> Spectral Bolts</li>
+          <li><strong>Melhor uso:</strong> Full AoE e hunts meta</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
     function showTab(tabId) {
       const tabs = document.querySelectorAll('.tab');
       const contents = document.querySelectorAll('.content');
 
-      tabs.forEach(tab => tab.classList.remove('active'));
-      contents.forEach(content => content.classList.remove('active'));
+      tabs.forEach(tab => {
+        tab.classList.remove('active');
 
-      event.target.classList.add('active');
+        if (tab.getAttribute('onclick').includes(tabId)) {
+          tab.classList.add('active');
+        }
+      });
+
+      contents.forEach(content => {
+        content.classList.remove('active');
+      });
+
       document.getElementById(tabId).classList.add('active');
     }
   </script>
