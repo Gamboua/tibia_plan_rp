@@ -3,523 +3,446 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RP 20-200 Dashboard 2026</title>
+  <title>Royal Paladin 150+ Roadmap</title>
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      font-family: Arial, sans-serif;
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: #e2e8f0;
-      padding: 20px;
+      background: #111827;
+      color: #f3f4f6;
+      padding: 24px;
     }
 
     h1 {
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
-
-    .subtitle {
-      color: #94a3b8;
-      margin-bottom: 24px;
+      margin-bottom: 18px;
+      color: #facc15;
     }
 
     .tabs {
       display: flex;
-      gap: 10px;
       flex-wrap: wrap;
+      gap: 10px;
       margin-bottom: 24px;
     }
 
-    .tab {
-      background: #1e293b;
-      border: 1px solid #334155;
+    .tab-button {
+      background: #1f2937;
+      border: 1px solid #374151;
       color: white;
       padding: 12px 18px;
-      border-radius: 10px;
       cursor: pointer;
+      border-radius: 8px;
       transition: 0.2s;
     }
 
-    .tab:hover {
-      background: #334155;
+    .tab-button:hover,
+    .tab-button.active {
+      background: #facc15;
+      color: black;
     }
 
-    .tab.active {
-      background: #2563eb;
-    }
-
-    .content {
+    .tab-content {
       display: none;
+      animation: fadeIn 0.2s ease;
     }
 
-    .content.active {
+    .tab-content.active {
       display: block;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
+    .card {
+      background: #1f2937;
+      border: 1px solid #374151;
+      border-radius: 14px;
+      padding: 18px;
       margin-bottom: 20px;
     }
 
-    .card {
-      background: #1e293b;
-      border-radius: 16px;
-      padding: 20px;
-      border: 1px solid #334155;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    .card h2 {
+      color: #facc15;
+      margin-bottom: 12px;
     }
 
-    .card h3 {
-      margin-bottom: 14px;
-      font-size: 22px;
+    .hunt-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 18px;
     }
 
-    .xp {
-      border-left: 5px solid #22c55e;
+    .hunt-box {
+      background: #111827;
+      border: 1px solid #374151;
+      border-radius: 10px;
+      padding: 14px;
     }
 
-    .profit {
-      border-left: 5px solid #eab308;
-    }
-
-    .neutral {
-      border-left: 5px solid #38bdf8;
-    }
-
-    .section-title {
-      margin-top: 24px;
-      margin-bottom: 16px;
-      font-size: 24px;
+    .hunt-box h3 {
+      margin-bottom: 10px;
+      color: #60a5fa;
     }
 
     ul {
-      padding-left: 18px;
-      line-height: 1.7;
+      margin-left: 18px;
+      margin-top: 10px;
     }
 
     li {
-      margin-bottom: 6px;
+      margin-bottom: 8px;
+      line-height: 1.5;
     }
 
-    .tag {
-      display: inline-block;
-      padding: 4px 10px;
-      border-radius: 999px;
-      font-size: 12px;
-      margin-bottom: 12px;
-      background: #334155;
-      color: #cbd5e1;
-    }
-
-    .footer {
-      margin-top: 40px;
-      padding: 20px;
-      background: #111827;
-      border-radius: 16px;
-      border: 1px solid #334155;
-    }
-
-    code {
-      background: #0f172a;
-      padding: 2px 6px;
-      border-radius: 6px;
+    .tooltip {
+      position: relative;
       color: #93c5fd;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    .tooltip img {
+      display: none;
+      position: absolute;
+      top: 24px;
+      left: 0;
+      width: 96px;
+      background: #000;
+      border: 1px solid #4b5563;
+      padding: 4px;
+      z-index: 999;
+    }
+
+    .tooltip:hover img {
+      display: block;
+    }
+
+    .equipment-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+
+    .equip-box {
+      background: #111827;
+      border: 1px solid #374151;
+      border-radius: 10px;
+      padding: 14px;
+    }
+
+    a {
+      color: #93c5fd;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(5px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Royal Paladin Dashboard 2026</h1>
-  <p class="subtitle">Roadmap completo do level 20 ao 200 focado em solo hunt, profit e progressão moderna.</p>
+  <h1>Royal Paladin 150+ Progression Dashboard</h1>
 
   <div class="tabs">
-    <button class="tab active" onclick="showTab('20-50')">20-50</button>
-    <button class="tab" onclick="showTab('50-80')">50-80</button>
-    <button class="tab" onclick="showTab('80-100')">80-100</button>
-    <button class="tab" onclick="showTab('100-130')">100-130</button>
-    <button class="tab" onclick="showTab('130-160')">130-160</button>
-    <button class="tab" onclick="showTab('160-200')">160-200</button>
+    <button class="tab-button active" onclick="openTab(event, 'lvl150')">150-180</button>
+    <button class="tab-button" onclick="openTab(event, 'lvl180')">180-220</button>
+    <button class="tab-button" onclick="openTab(event, 'lvl220')">220-260</button>
+    <button class="tab-button" onclick="openTab(event, 'lvl260')">260-300</button>
   </div>
 
-  <div id="20-50" class="content active">
-    <div class="grid">
-      <div class="card xp">
-        <span class="tag">Melhor XP</span>
-        <h3>Stone Refiners</h3>
-        <ul>
-          <li>XP: 150k-250k/h</li>
-          <li>Usar Stealth Ring</li>
-          <li>Royal Spears</li>
-          <li>Baixo risco</li>
-          <li>Ideal para rushar level</li>
-        </ul>
-      </div>
-
-      <div class="card profit">
-        <span class="tag">Melhor Profit</span>
-        <h3>Amazons + Swamp Trolls</h3>
-        <ul>
-          <li>Protective Charms</li>
-          <li>Medicine Pouch</li>
-          <li>Excelente profit low level</li>
-          <li>Risco extremamente baixo</li>
-          <li>Ótimo para bankroll inicial</li>
-        </ul>
-      </div>
-
-      <div class="card neutral">
-        <span class="tag">Equilibrado</span>
-        <h3>Apes</h3>
-        <ul>
-          <li>XP consistente</li>
-          <li>Bom profit</li>
-          <li>Ape Fur e Ape Tokens</li>
-          <li>Boa bestiary</li>
-          <li>Excelente progressão</li>
-        </ul>
-      </div>
-    </div>
-
-    <h2 class="section-title">Equipamentos</h2>
+  <div id="lvl150" class="tab-content active">
     <div class="card">
-      <ul>
-        <li>Zaoan Helmet</li>
-        <li>Paladin Armor</li>
-        <li>Zaoan Legs</li>
-        <li>Boots of Haste</li>
-        <li>Composite Hornbow</li>
-        <li>Royal Spears</li>
-      </ul>
-    </div>
+      <h2>Hunts Recomendadas</h2>
 
-    <h2 class="section-title">Magias</h2>
-    <div class="card">
-      <ul>
-        <li>exori con</li>
-        <li>exori san (level 40)</li>
-        <li>exura gran</li>
-        <li>utani hur</li>
-        <li>strong haste</li>
-      </ul>
-    </div>
-  </div>
+      <div class="hunt-grid">
+        <div class="hunt-box">
+          <h3>XP - Lava Lurkers</h3>
+          <p>
+            Use <strong>Diamond Arrows</strong> com <strong>Mas San</strong>.
+            Utilize <strong>GFB</strong> quando fechar box.
+          </p>
 
-  <div id="50-80" class="content">
-    <div class="grid">
-      <div class="card xp">
-        <span class="tag">Melhor XP</span>
-        <h3>Lion's Rock</h3>
-        <ul>
-          <li>XP: 300k-500k/h</li>
-          <li>Excelente respawn</li>
-          <li>Rush de level muito forte</li>
-          <li>Começa a aprender AoE</li>
-        </ul>
-      </div>
+          <ul>
+            <li>Bow recomendado: <span class="tooltip"><a href="https://www.tibiawiki.com.br/wiki/Rift_Bow" target="_blank">Rift Bow</a><img src="https://static.wikia.nocookie.net/tibia/images/0/02/Rift_Bow.gif" /></span></li>
+            <li>Ammo: Diamond Arrows</li>
+            <li>Consumíveis para loot: Platinum Coins, magma items</li>
+            <li>Leve Fire Protection Amulets</li>
+          </ul>
+        </div>
 
-      <div class="card profit">
-        <span class="tag">Melhor Profit</span>
-        <h3>Yalahar Cults</h3>
-        <ul>
-          <li>Rope Belts</li>
-          <li>Profit muito consistente</li>
-          <li>Baixo risco</li>
-          <li>Excelente para imbuement items</li>
-        </ul>
-      </div>
+        <div class="hunt-box">
+          <h3>Profit - Exotic Cave</h3>
+          <p>
+            Excelente profit para RP 150+. Use Diamond Arrows e kite constante.
+          </p>
 
-      <div class="card neutral">
-        <span class="tag">Equilibrado</span>
-        <h3>Mutated Tigers</h3>
-        <ul>
-          <li>Sabreteeth</li>
-          <li>XP boa</li>
-          <li>Profit sólido</li>
-          <li>Excelente hunt para RP solo</li>
-        </ul>
+          <ul>
+            <li>Fique de olho em: Exotic Cave loot, Creature Products</li>
+            <li>Rune situacional: Avalanche</li>
+            <li>Priorize imbuement de life leech</li>
+            <li>Use prismatic rings se necessário</li>
+          </ul>
+        </div>
+
+        <div class="hunt-box">
+          <h3>Neutra - Mini Rosha</h3>
+          <p>
+            Ótimo equilíbrio entre XP e profit.
+          </p>
+
+          <ul>
+            <li>Use Diamond Arrows + Mas San</li>
+            <li>Loot importante: Silencer Claws, Suspicious Devices</li>
+            <li>Bow recomendado: Living Vine Bow</li>
+            <li>Leve Energy Ring para emergências</li>
+          </ul>
+        </div>
       </div>
     </div>
 
-    <h2 class="section-title">Equipamentos</h2>
     <div class="card">
-      <ul>
-        <li>Warsinger Bow</li>
-        <li>Onyx Arrows</li>
-        <li>Depth Lorica</li>
-        <li>Zaoan Helmet</li>
-        <li>BOH</li>
-      </ul>
-    </div>
+      <h2>Equipamentos Recomendados</h2>
 
-    <h2 class="section-title">Magias</h2>
-    <div class="card">
-      <ul>
-        <li>exevo mas san (level 50)</li>
-        <li>utito tempo san (level 60)</li>
-      </ul>
+      <div class="equipment-grid">
+        <div class="equip-box">
+          <h3>Set Geral</h3>
+          <ul>
+            <li><span class="tooltip"><a href="https://www.tibiawiki.com.br/wiki/Fabulous_Legs" target="_blank">Fabulous Legs</a><img src="https://static.wikia.nocookie.net/tibia/images/8/83/Fabulous_Legs.gif" /></span></li>
+            <li>Depth Lorica</li>
+            <li>Winged Boots</li>
+            <li>Sleep Shawl</li>
+          </ul>
+        </div>
+
+        <div class="equip-box">
+          <h3>Imbuements</h3>
+          <ul>
+            <li>Bow: Powerful Strike + Void + Vampirism</li>
+            <li>Armor: Powerful Vampirism</li>
+            <li>Helmet: Powerful Void</li>
+            <li>Boots: situacional</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div id="80-100" class="content">
-    <div class="grid">
-      <div class="card xp">
-        <span class="tag">Melhor XP</span>
-        <h3>Nightmare Scions</h3>
-        <ul>
-          <li>XP: 700k-1kk/h</li>
-          <li>Excelente scaling</li>
-          <li>Ideal para rushar 100</li>
-          <li>Maior risco</li>
-        </ul>
-      </div>
+  <div id="lvl180" class="tab-content">
+    <div class="card">
+      <h2>Hunts Recomendadas</h2>
 
-      <div class="card profit">
-        <span class="tag">Melhor Profit</span>
-        <h3>Putrid Mummies</h3>
-        <ul>
-          <li>Profit extremamente forte</li>
-          <li>350k+/h possível</li>
-          <li>Baixo risco</li>
-          <li>Excelente sustain</li>
-        </ul>
-      </div>
+      <div class="hunt-grid">
+        <div class="hunt-box">
+          <h3>XP - Asuras Mirror</h3>
+          <ul>
+            <li>Diamond Arrows + Mas San constantemente</li>
+            <li>Use SSA e Might Ring em pulls grandes</li>
+            <li>Loot: Blue Plasma Ring, valuable creature products</li>
+            <li>Priorize sustain com leech</li>
+          </ul>
+        </div>
 
-      <div class="card neutral">
-        <span class="tag">Equilibrado</span>
-        <h3>Wyrms</h3>
-        <ul>
-          <li>Boa XP</li>
-          <li>Profit neutro</li>
-          <li>Excelente para aprender kite</li>
-          <li>Respawn confortável</li>
-        </ul>
+        <div class="hunt-box">
+          <h3>Profit - Werelions</h3>
+          <ul>
+            <li>Excelente profit constante</li>
+            <li>Loot: Lion Manes, Platinum Coins</li>
+            <li>Use Falcon Bow se possível</li>
+            <li>Ammo: Diamond Arrows</li>
+          </ul>
+        </div>
+
+        <div class="hunt-box">
+          <h3>Neutra - Glooth Bandits</h3>
+          <ul>
+            <li>Hunt extremamente confortável</li>
+            <li>Loot: Glooth Sandwich, Glooth items</li>
+            <li>Rune: Avalanche opcional</li>
+            <li>Ideal para stamina verde</li>
+          </ul>
+        </div>
       </div>
     </div>
 
-    <h2 class="section-title">Equipamentos</h2>
     <div class="card">
-      <ul>
-        <li>Rift Bow</li>
-        <li>Prismatic Armor</li>
-        <li>Yalahari Legs</li>
-        <li>Crystalline Arrows</li>
-      </ul>
+      <h2>Equipamentos Recomendados</h2>
+
+      <div class="equipment-grid">
+        <div class="equip-box">
+          <h3>Set Geral</h3>
+          <ul>
+            <li>Falcon Bow</li>
+            <li>Ghost Chestplate</li>
+            <li>Fabulous Legs</li>
+            <li>Dark Whispers</li>
+          </ul>
+        </div>
+
+        <div class="equip-box">
+          <h3>Imbuements</h3>
+          <ul>
+            <li>Bow: Crit + Mana + Life</li>
+            <li>Armor: Life Leech</li>
+            <li>Helmet: Mana Leech</li>
+            <li>Backpack extra de supplies</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div id="100-130" class="content">
-    <div class="grid">
-      <div class="card xp">
-        <span class="tag">Melhor XP</span>
-        <h3>Lava Lurkers</h3>
-        <ul>
-          <li>XP extremamente alta</li>
-          <li>1.5kk+/h</li>
-          <li>Waste considerável</li>
-          <li>Ideal para rush</li>
-        </ul>
-      </div>
+  <div id="lvl220" class="tab-content">
+    <div class="card">
+      <h2>Hunts Recomendadas</h2>
 
-      <div class="card profit">
-        <span class="tag">Melhor Profit</span>
-        <h3>Mini Rosha</h3>
-        <ul>
-          <li>Profit consistente</li>
-          <li>Ótimos creature products</li>
-          <li>Risco controlável</li>
-          <li>Excelente evolução</li>
-        </ul>
-      </div>
+      <div class="hunt-grid">
+        <div class="hunt-box">
+          <h3>XP - Summer Court</h3>
+          <ul>
+            <li>Diamond Arrows + Mas San + Avalanche</li>
+            <li>Troque amuletos conforme elemental</li>
+            <li>Loot: Summer Court items</li>
+            <li>Use Falcon Coif ou Lion Spangenhelm</li>
+          </ul>
+        </div>
 
-      <div class="card neutral">
-        <span class="tag">Equilibrado</span>
-        <h3>Werehyaenas</h3>
-        <ul>
-          <li>Excelente hunt moderna</li>
-          <li>XP forte</li>
-          <li>Profit sólido</li>
-          <li>Boa para AoE</li>
-        </ul>
+        <div class="hunt-box">
+          <h3>Profit - Roshamuul</h3>
+          <ul>
+            <li>Excelente para profit em altos níveis</li>
+            <li>Loot: Silencer Claws, Frazzle Skin</li>
+            <li>Leve Energy Ring</li>
+            <li>Use utito constantemente se confortável</li>
+          </ul>
+        </div>
+
+        <div class="hunt-box">
+          <h3>Neutra - Draken Walls</h3>
+          <ul>
+            <li>Hunt segura e consistente</li>
+            <li>Loot: Draken loot em geral</li>
+            <li>Ammo: Diamond Arrows</li>
+            <li>Excelente para solo confortável</li>
+          </ul>
+        </div>
       </div>
     </div>
 
-    <h2 class="section-title">Equipamentos</h2>
     <div class="card">
-      <ul>
-        <li>Living Vine Bow</li>
-        <li>Prismatic Armor</li>
-        <li>Dark Whispers</li>
-        <li>Winged Boots</li>
-      </ul>
+      <h2>Equipamentos Recomendados</h2>
+
+      <div class="equipment-grid">
+        <div class="equip-box">
+          <h3>Set Geral</h3>
+          <ul>
+            <li>Falcon Bow</li>
+            <li>Gnome Armor</li>
+            <li>Soulstalkers</li>
+            <li>Falcon Greaves</li>
+          </ul>
+        </div>
+
+        <div class="equip-box">
+          <h3>Imbuements</h3>
+          <ul>
+            <li>Bow: Crit + Mana + Life</li>
+            <li>Armor: elemental conforme hunt</li>
+            <li>Helmet: Mana Leech</li>
+            <li>Backpack: supplies + SSA</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div id="130-160" class="content">
-    <div class="grid">
-      <div class="card xp">
-        <span class="tag">Melhor XP</span>
-        <h3>Werehyaenas AoE</h3>
-        <ul>
-          <li>2kk+/h</li>
-          <li>Excelente scaling</li>
-          <li>Meta moderna RP</li>
-          <li>Necessita kite bom</li>
-        </ul>
-      </div>
-
-      <div class="card profit">
-        <span class="tag">Melhor Profit</span>
-        <h3>Glooth Bandits</h3>
-        <ul>
-          <li>Profit absurdo</li>
-          <li>Muito consistente</li>
-          <li>Baixo risco</li>
-          <li>Uma das hunts mais famosas para RP</li>
-        </ul>
-      </div>
-
-      <div class="card neutral">
-        <span class="tag">Equilibrado</span>
-        <h3>Medusa Tower</h3>
-        <ul>
-          <li>XP boa</li>
-          <li>Profit bom</li>
-          <li>Boa bestiary</li>
-          <li>Excelente hunt clássica</li>
-        </ul>
-      </div>
-    </div>
-
-    <h2 class="section-title">Equipamentos</h2>
+  <div id="lvl260" class="tab-content">
     <div class="card">
-      <ul>
-        <li>Living Vine Bow</li>
-        <li>Ghost Chestplate</li>
-        <li>Sleep Shawl</li>
-        <li>Prismatic Legs</li>
-      </ul>
-    </div>
-  </div>
+      <h2>Hunts Recomendadas</h2>
 
-  <div id="160-200" class="content">
-    <div class="grid">
-      <div class="card xp">
-        <span class="tag">Melhor XP</span>
-        <h3>Asuras Palace</h3>
-        <ul>
-          <li>3kk+/h possível</li>
-          <li>Meta de XP RP</li>
-          <li>Excelente scaling</li>
-          <li>Maior risco</li>
-        </ul>
-      </div>
+      <div class="hunt-grid">
+        <div class="hunt-box">
+          <h3>XP - Cobra Bastion</h3>
+          <ul>
+            <li>Use Diamond Arrows + Mas San</li>
+            <li>Excelente XP para RP solo</li>
+            <li>Loot: Cobra items, valuable creature products</li>
+            <li>Use Sleep Shawl e prismatic ring em pulls maiores</li>
+          </ul>
+        </div>
 
-      <div class="card profit">
-        <span class="tag">Melhor Profit</span>
-        <h3>Glooth Bandits</h3>
-        <ul>
-          <li>Continua excelente</li>
-          <li>Profit muito consistente</li>
-          <li>Baixo risco</li>
-          <li>Ótima estabilidade</li>
-        </ul>
-      </div>
+        <div class="hunt-box">
+          <h3>Profit - Werelions</h3>
+          <ul>
+            <li>Profit extremamente consistente</li>
+            <li>Loot importante: Lion Mane, Platinum Coins</li>
+            <li>Use Falcon Bow ou Cataclysm</li>
+            <li>Diamond Arrows constantemente</li>
+          </ul>
+        </div>
 
-      <div class="card neutral">
-        <span class="tag">Equilibrado</span>
-        <h3>Banuta</h3>
-        <ul>
-          <li>XP sólida</li>
-          <li>Profit bom</li>
-          <li>Boa hunt para charms</li>
-          <li>Excelente sustain</li>
-        </ul>
+        <div class="hunt-box">
+          <h3>Neutra - Banuta</h3>
+          <ul>
+            <li>Boa mistura de XP e loot</li>
+            <li>Use Mas San + Avalanche</li>
+            <li>Loot importante: Ape Furs e creature products</li>
+            <li>Ideal para hunts confortáveis solo</li>
+          </ul>
+        </div>
       </div>
     </div>
 
-    <h2 class="section-title">Equipamentos</h2>
     <div class="card">
-      <ul>
-        <li>Bow of Cataclysm</li>
-        <li>Ghost Chestplate</li>
-        <li>Falcon Coif</li>
-        <li>Winged Boots</li>
-        <li>Sleep Shawl</li>
-      </ul>
+      <h2>Equipamentos Recomendados</h2>
+
+      <div class="equipment-grid">
+        <div class="equip-box">
+          <h3>Set Geral</h3>
+          <ul>
+            <li>Soulbleeder</li>
+            <li>Ghost Chestplate</li>
+            <li>Falcon Greaves</li>
+            <li>Winged Boots</li>
+          </ul>
+        </div>
+
+        <div class="equip-box">
+          <h3>Imbuements</h3>
+          <ul>
+            <li>Bow: Crit + Mana + Life</li>
+            <li>Armor: elemental conforme hunt</li>
+            <li>Helmet: Mana Leech</li>
+            <li>Leve swaps de proteção elemental</li>
+          </ul>
+        </div>
+      </div>
     </div>
-  </div>
-
-  <div class="footer">
-    <h2>Guia Geral de Armas e Munições</h2>
-    <br />
-
-    <div class="grid">
-      <div class="card">
-        <h3>Level 20-40</h3>
-        <ul>
-          <li><strong>Arma:</strong> Spear / Royal Spear</li>
-          <li><strong>Munição:</strong> Spears</li>
-          <li><strong>Estilo:</strong> Single target</li>
-          <li><strong>Melhor uso:</strong> Hunts low risk e profit</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>Level 40-80</h3>
-        <ul>
-          <li><strong>Arma:</strong> Bow</li>
-          <li><strong>Munição:</strong> Onyx Arrows</li>
-          <li><strong>Alternativa:</strong> Modified Crossbow + Bolts</li>
-          <li><strong>Melhor uso:</strong> Kite e hunts híbridas</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>Level 80-150</h3>
-        <ul>
-          <li><strong>Arma:</strong> Rift Bow / Living Vine Bow</li>
-          <li><strong>Munição:</strong> Crystalline Arrows</li>
-          <li><strong>Alternativa:</strong> Drill Bolts</li>
-          <li><strong>Melhor uso:</strong> AoE hunts modernas</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>Level 150-200</h3>
-        <ul>
-          <li><strong>Arma:</strong> Bow of Cataclysm</li>
-          <li><strong>Munição:</strong> Diamond Arrows</li>
-          <li><strong>Alternativa:</strong> Spectral Bolts</li>
-          <li><strong>Melhor uso:</strong> Full AoE e hunts meta</li>
-        </ul>
-      </div>
     </div>
   </div>
 
   <script>
-    function showTab(tabId) {
-      const tabs = document.querySelectorAll('.tab');
-      const contents = document.querySelectorAll('.content');
-
-      tabs.forEach(tab => {
-        tab.classList.remove('active');
-
-        if (tab.getAttribute('onclick').includes(tabId)) {
-          tab.classList.add('active');
-        }
-      });
+    function openTab(event, tabId) {
+      const contents = document.querySelectorAll('.tab-content');
+      const buttons = document.querySelectorAll('.tab-button');
 
       contents.forEach(content => {
         content.classList.remove('active');
       });
 
+      buttons.forEach(button => {
+        button.classList.remove('active');
+      });
+
       document.getElementById(tabId).classList.add('active');
+      event.currentTarget.classList.add('active');
     }
   </script>
 </body>
